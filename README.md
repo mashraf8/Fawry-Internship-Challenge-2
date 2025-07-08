@@ -41,6 +41,9 @@
 - **Why `LinkedHashMap` over `HashMap`?**
     - Maintains insertion order for consistent listing/removal.
 
+### **4. UML Class Diagram**
+![UML Class Diagram for E-commerce System](image/UML.png)
+
 ### **4. Output**
 
 ![Output Image](image/output.png)
