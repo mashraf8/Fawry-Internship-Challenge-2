@@ -40,3 +40,7 @@
 
 - **Why `LinkedHashMap` over `HashMap`?**
     - Maintains insertion order for consistent listing/removal.
+
+### **4. Output**
+
+![Output Image](image/output.png)

@@ -29,9 +29,9 @@ public class QuantumBookstoreFullTest
         Bookstore store = new Bookstore(inventory);
         try
         {
-            store.buyBook("ISBN-01", 2, "user@example.com", "123 Main St");
-            store.buyBook("ISBN-02", 1, "user@example.com", "");
-            store.buyBook("ISBN-03", 1, "user@example.com", "");
+            store.buyBook("ISBN-01", 2, "user@gmail.com", "Ahmed Orabi St");
+            store.buyBook("ISBN-02", 1, "user@gmail.com", "");
+            store.buyBook("ISBN-03", 1, "user@gmail.com", "");
         }
         catch (Exception ex)
         {
