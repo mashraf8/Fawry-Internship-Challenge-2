@@ -12,25 +12,31 @@
     - `Bookstore`: Coordinates the sale process.
 
 #### Open/Closed Principle
-- **Definition:** Classes should be open for extension, closed for modification.
-- **Application:** New book types (e.g`AudioBook`) can be added by extending `Book` and overriding `processSale()` without altering existing code.
+- **Definition:** A class should allow adding new features without changing its existing code.
+- **Application:**  
+  You can add a new book type like `AudioBook` by creating a new class that extends `Book` and overrides the `processSale()` method.  
+  This means the system supports changes (new book types) **without breaking** the existing code.
 
 #### Dependency Inversion Principle
-- **Definition:** High-level modules depend on abstractions, not concrete implementations.
+
+- **Definition:** High-level modules should depend on abstractions, not concrete implementations.
+
 - **Application:**
-    - `PaperBook` uses `IShippingService`.
-    - `EBook` uses `IMailService`.
-    - Enables easy replacement and decoupling.
+  - `PaperBook` relies on the `IShippingService` interface instead of a concrete `ShippingService`.
+  - `EBook` depends on the `IMailService` interface instead of directly using `MailService`.
+  - This design allows adding new types of shipping or mail services **without modifying any book-related code**.
+  - Clean separation between book logic and delivery methods.
+
 
 ### **2. Applied Design Pattern**
 
-#### Strategy Pattern
-- **Definition:** Encapsulates interchangeable algorithms or behaviors.
-- **Application:**
-    - `ShippingService` and `MailService` are passed to books to handle delivery.
-    - `processSale()` delegates behavior via injected strategy:
-        - `PaperBook`: calls `shippingService.send()`.
-        - `EBook`: calls `mailService.send()`.
+* **Strategy Pattern:**
+  The `Book` class delegates the delivery behavior to an external **strategy** object. This pattern allows defining a family of delivery algorithms and making them interchangeable without modifying the book classes themselves.
+
+  - `ShippingService`: handles physical delivery for `PaperBook`.
+  - `MailService`: handles digital delivery for `EBook`.
+
+  These services implement interfaces (`IShippingService`, `IMailService`) and are passed into books during creation. This design makes the system **extensible**, allowing you to add new delivery methods such as `DroneDeliveryService`. You don’t need to modify the existing book classes to support them.
 
 ### **3. Choice of Data Structures**
 
