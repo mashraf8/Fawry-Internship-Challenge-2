@@ -53,3 +53,7 @@
 ### **4. Output**
 
 ![Output Image](image/output.png)
+
+## Note
+I noticed an unusual number of clone operations during the period allocated for the solution. This indicates the possibility that others might have used this solution without permission.
+[Mohammed Ashraf](https://github.com/mashraf8/Fawry-Internship-Challenge.git)
